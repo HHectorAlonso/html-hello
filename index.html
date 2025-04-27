@@ -1,14 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instagram Photo Feed con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href= "styles.css">
 
-    <title>Document</title>
 </head>
-<body>
-    
-</body>
+  <body>
+    <h1>Instagram Photo Feed con Bootstrap</h1>
+    <div class="Navbar-completo">
+<!-- nav bar para el logo de instagram + el nombre-->
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img class="logo" src="logotipo-de-instagram.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Instagram
+          </a>
+        </div>
+      </nav>
+<!-- nav bar para los botones de nuevo post y ajustes-->
+    <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-start">
+<!-- boton + ventaja de "nuevo post"-->
+<button type="button" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Nuevo post
+</button>
+<!-- ventana de aviso -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Crear nuevo post</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <strong>Tu nuevo post</strong>
+      </div>
+      <div class="modal-body">
+        Empezamos aqui:
+      </div>
+      <textarea name="comentario" id="texto"></textarea>
+      <div class="iconos">
+        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
+          <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+          <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
+        </svg>
+        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
+          <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+        </svg>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+      <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+      <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+    </svg>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Perfil</a></li>
+    <li><a class="dropdown-item" href="#">Ajustes</a></li>
+    <li><a class="dropdown-item" href="#">Datos y Privacidad</a></li>
+    <li><a class="dropdown-item" href="#">Desconectar</a></li>
+  </ul>
+</div>
+    </div>
+<!-- pestañas para las vistas-->
+<ul class="nav">
+  <li class="nav-item">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#cuadricula" type="button" role="tab" aria-controls="cuadricula" aria-selected="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3" viewBox="0 0 16 16">
+        <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5zM1.5 1a.5.5 0 0 0-.5.5V5h4V1zM5 6H1v4h4zm1 4h4V6H6zm-1 1H1v3.5a.5.5 0 0 0 .5.5H5zm1 0v4h4v-4zm5 0v4h3.5a.5.5 0 0 0 .5-.5V11zm0-1h4V6h-4zm0-5h4V1.5a.5.5 0 0 0-.5-.5H11zm-1 0V1H6v4z"/>
+      </svg>
+    </button>  </li>
+  <li class="nav-item">
+    <button class="nav-link" id="scroll-tab" data-bs-toggle="tab" data-bs-target="#columna" type="button" role="tab" aria-controls="columna" aria-selected="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+        <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+        <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"/>
+      </svg>
+    </button>
+    </li>
+</ul>
+<!-- vista de cuadricula-->
+<div class="tab-content">
+<div class="tab-pane fade show active" id="cuadricula" role="tabpanel" aria-labelledby="home-tab">  
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/31009027/pexels-photo-31009027/free-photo-of-pastor-australiano-y-samoyedo-jugando-en-la-playa.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/31090535/pexels-photo-31090535/free-photo-of-frente-de-salon-de-madera-de-estilo-rustico-occidental.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/31776912/pexels-photo-31776912.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/29600296/pexels-photo-29600296/free-photo-of-misteriosa-escena-de-bosque-brumoso-con-arboles-desnudos.png?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/31487307/pexels-photo-31487307/free-photo-of-patinetas-en-blanco-y-negro-en-venice-beach.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/30739081/pexels-photo-30739081/free-photo-of-deliciosa-tarta-de-fresas-con-elegantes-tulipanes.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/31693929/pexels-photo-31693929/free-photo-of-vista-de-la-playa-en-la-hora-dorada-con-la-montana-de-la-mesa.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/15834626/pexels-photo-15834626/free-photo-of-tarde-noche-luna-astronomia.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+    <div class="col">
+      <img class="imagen-cuadricula" src="https://images.pexels.com/photos/31737405/pexels-photo-31737405.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- vista de scroll vertical-->
+<div class="tab-pane fade" id="columna" role="tabpanel" aria-labelledby="scroll-tab"><div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>Perros jugando</h6>
+      <img src="https://images.pexels.com/photos/31009027/pexels-photo-31009027/free-photo-of-pastor-australiano-y-samoyedo-jugando-en-la-playa.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>1256 likes</strong></p>
+      <p>Un pastor australiano y un samoyedo disfrutan de un animado momento de juego. Su energía y felicidad iluminan el paisaje natural que los rodea.</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>Puerta de un salon</h6>
+      <img src="https://images.pexels.com/photos/31090535/pexels-photo-31090535/free-photo-of-frente-de-salon-de-madera-de-estilo-rustico-occidental.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>44648 likes</strong></p>
+      <p>frente de salon de madera de estilo rustico occidental</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>Pintor en la calle</h6>
+      <img src="https://images.pexels.com/photos/31776912/pexels-photo-31776912.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>932 likes</strong></p>
+      <p>Una persona sentada en la acera dibuja o pinta en un lienzo, rodeada de materiales de arte y obras terminadas</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">      
+      <h6>Bosque</h6>
+      <img src="https://images.pexels.com/photos/29600296/pexels-photo-29600296/free-photo-of-misteriosa-escena-de-bosque-brumoso-con-arboles-desnudos.png?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>2568 likes</strong></p>
+      <p>bosque con árboles altos y desnudos. El suelo está cubierto de hojas caídas y ramas, en un ambiente brumoso.</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>Skate!</h6>
+      <img src="https://images.pexels.com/photos/31487307/pexels-photo-31487307/free-photo-of-patinetas-en-blanco-y-negro-en-venice-beach.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>1256 likes</strong></p>
+      <p>skatepark con rampas y curvas, rodeado de palmeras. Está en blanco y negro.</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>hora del postre</h6>
+      <img src="https://images.pexels.com/photos/30739081/pexels-photo-30739081/free-photo-of-deliciosa-tarta-de-fresas-con-elegantes-tulipanes.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>37587 likes</strong></p>
+      <p>tarta decorada con nata montada y fresas en rodajas en la parte superior. Está colocada sobre una base dorada y rodeada de tulipanes rojos</p>    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>Pueblo en la costa</h6>
+      <img src="https://images.pexels.com/photos/31693929/pexels-photo-31693929/free-photo-of-vista-de-la-playa-en-la-hora-dorada-con-la-montana-de-la-mesa.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>5899 likes</strong></p>
+      <p>escena costera con una playa rocosa en primer plano. Hay un grupo de casas rodeadas de palmeras y, al fondo, una imponente montaña parcialmente cubierta por nubes</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>Luna en fase creciente</h6>
+      <img src="https://images.pexels.com/photos/15834626/pexels-photo-15834626/free-photo-of-tarde-noche-luna-astronomia.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>875 likes</strong></p>
+      <p>contraste marcado entre la claridad de la luna y un objeto oscuro desenfocado en primer plano que parcialmente la oculta</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row-columnas">
+    <div class="col-columnas">
+      <h6>personas trabajando</h6>
+      <img src="https://images.pexels.com/photos/31737405/pexels-photo-31737405.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+      <p class="likes"><strong>375 likes</strong></p>
+      <p>personas trabajando en un ambiente organizado, en una fábrica o taller donde manipulan objetos redondos o recipientes</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
 </html>
