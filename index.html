@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>formularios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href= "styles.css">
+
+</head>
+  <body>
+    <div class="ventana">
+      <div class="titulo">Ejemplo de fomulario de pago</div>
+      <div class="cuerpo">
+        <form>
+          <div class="aviso">
+            <p>Todos los campos estan vacios </p>
+
+        </div>
+        <div class="datos-tarjeta">
+<!-- nº de tarjeta   -->
+          <div class="numero-tarjeta">
+            <label for="exampleFormControlInput1">Tarjeta #</label>
+            <input type="number" required class="form-control" id="exampleFormControlInput1" placeholder="XXXXXXXXXXXXX">
+          </div>
+
+<!-- nº de CVV   -->
+          <div class="numero-cvv">
+            <label for="exampleFormControlInput1">CVV #</label>
+            <input type="number" required class="form-control" id="exampleFormControlInput1" placeholder="000">
+          </div>
+
+<!-- importe   -->
+          <div class="importe">  
+            <label for="exampleFormControlInput1">Importe</label><br>
+            <div class="moneda-bloque">
+            <strong>€</strong>
+            <input type="number" required class="form-control" id="exampleFormControlInput1" placeholder="0,00€">
+            </div>
+          </div>
+        </div>
+
+
+<!-- datos del titular de la tarjeta  -->
+        <div class="datos-personales">
+          <div class="columna-izq">
+<!-- nombre  -->
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Nombre</label>
+                <input type="name" required class="form-control" id="exampleFormControlInput1">
+              </div>
+<!-- ciudad  -->
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Ciudad</label>
+                <input type="city" required class="form-control" id="exampleFormControlInput1">
+              </div>
+        
+<!-- medios de pago aceptados  -->
+              <div class="pagos-aceptados">
+                <p class="aceptado">tipos de pago aceptados</p>
+                <div class="iconos" >
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  <img src="https://thumbs.dreamstime.com/b/icono-del-logotipo-de-mastercard-added-es-una-multinacional-estadounidense-servicios-financieros-con-sede-en-la-global-204759308.jpg" alt="">
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  <img src="https://static.vecteezy.com/system/resources/previews/020/336/392/non_2x/visa-logo-visa-icon-free-free-vector.jpg" alt="">
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                  <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="">
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                  <img src="https://www.cucu-tras.es/wp-content/uploads/2021/11/logo-vector-bizum.jpg" alt="">
+                </label>
+              </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="columna-der">
+<!-- apellidos  -->
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Apellidos</label>
+                <input type="last name" required class="form-control" id="exampleFormControlInput1">
+              </div>
+<!-- localidad y CP  -->
+              <div class="localidad-CP">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Localidad</label>
+                    <input type="city" required class="form-control" id="exampleFormControlInput1">
+                  </div>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">C.P.</label>
+                      <input type="number" required class="form-control" id="exampleFormControlInput1">
+                    </div>
+                  </div>
+<!-- mensaje + text area  -->
+
+                    <div class="mensaje">
+                      <p>Comentario</p>
+                      <textarea placeholder="Dejanos tu mensaje aqui"></textarea>
+                    </div>
+              </div>
+            </div>
+      </div>
+      </div>
+        </div>
+      </div>
+<!-- pie de pagina  -->
+      <div class="pie">
+        <button type="button" class="btn btn-secondary">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
+
